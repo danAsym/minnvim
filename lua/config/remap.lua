@@ -81,8 +81,8 @@ vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/config/
 -- EXPLORER
 -- --------------------------------------
 wk.add({
-  { "<leader>e", group = "🗺️ [E]xplorer" },
-  { "<leader>e", ":lua MiniFiles.open()<CR>", desc = "🗺️ [E]xplorer" },
+  { "<leader>-", ":Oil<CR>", desc = "🗺️ Parent [E]xplorer" },
+  { "<leader>e", function() require("oil").toggle_float() end, desc = "🗺️ [E]xplorer" },
 })
 
 

@@ -33,6 +33,7 @@ return {
           map("<leader>lf", vim.lsp.buf.format, "Code [F]ormat")
           map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
           map("K", vim.lsp.buf.hover, "Def")
+          map("ge", vim.diagnostic.open_float, "Error")
 
           -- highlight references and remove
           local client = vim.lsp.get_client_by_id(event.data.client_id)

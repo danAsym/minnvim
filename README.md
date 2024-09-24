@@ -33,14 +33,31 @@ This repository contains my personal Neovim configuration, designed for an effic
 ## 🧩 Plugins (`lua/plugins/`)
 
 - 💬 **Comment**: Easy code commenting
+    - `gcc` - un/comment line
+    - `gc` - un/comment line (visual mode)
 - 🧠 **Completions**: Auto-completion setup
+    - `Ctrl+n` - next
+    - `Ctrl+p` - prev
+    - `Ctrl+y` - select
+    - `Ctrl+l` - snippet next
 - 📝 **Editor**: General editor enhancements
 - 🎣 **Harpoon**: Quick file navigation
+    - `ga` - add
+    - `gh` - open
 - 📏 **Indentscope**: Visual indentation guides
 - 🌐 **LSP Config**: Language Server Protocol setup
 - 🧩 **LuaSnip**: Snippet engine
-- 📂 **Mini Files**: Minimalist file explorer
+- 📂 **Oil**: Minimalist file explorer
+    - `Space+e` - oil.nvim bases explorer
+    - Oil
+        - hjkl - move
+        - l - select
+        - o/O - open file vertically or horizontally
 - 🔭 **Telescope**: Fuzzy finder
+    - `Space+ff` - find
+    - `Space+fr` - resume find
+    - `Space+fl` - grep
+    - `Space+fb` - find buffers
 - 🌳 **Treesitter**: Syntax highlighting and code navigation
 - 🖼️ **UI**: User interface improvements
 - 🔑 **Which Key**: Keybinding helper
