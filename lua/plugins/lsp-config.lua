@@ -32,6 +32,7 @@ return {
           map("<leader>la", vim.lsp.buf.code_action, "Code [A]ction")
           map("<leader>lf", vim.lsp.buf.format, "Code [F]ormat")
           map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+          map("K", vim.lsp.buf.hover, "Def")
 
           -- highlight references and remove
           local client = vim.lsp.get_client_by_id(event.data.client_id)
@@ -199,6 +200,7 @@ return {
           end,
         },
       })
+
     end,
   },
 

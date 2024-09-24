@@ -30,7 +30,7 @@ vim.keymap.set("n", "N", "Nzz", opts)
 vim.keymap.set("n", "-", ":split<CR>", opts)
 vim.keymap.set("n", "|", ":vsplit<CR>", opts)
 vim.keymap.set("n", "=", "<C-w>=<cr>", opts)
-vim.keymap.set("n", "K", vim.lsp.buf.hover) -- lsp vim keymaps
+-- vim.keymap.set("n", "K", vim.lsp.buf.hover) -- lsp vim keymaps
 
 
 -- ======================================
@@ -216,6 +216,11 @@ wk.add({
   { "<leader>s", group = "⚡ [S]hortcuts" },
   { "<leader>sr", ":%s/\\<<C-r><C-w>\\>//g<Left><Left>", desc = "🔄 [R]eplace All" },
   { "<leader>sc", ":%s/\\<<C-r><C-w>\\>//gc<Left><Left><Left>", desc = "✅ [C]onfirm Replace All" },
+  { "<leader>sy", "y/\\<<C-r><C-w>\\>", desc = "🧩 [Y]ank until" },
+  { "<leader>sd", "d/\\<<C-r><C-w>\\>", desc = "💣 [D]elete until" },
+  { "<leader>s+", "g<C-a>", desc = "➕ [+]ncrement" },
+  { "<leader>sl", "gx", desc = "🔗 Open [L]ink under cursor" },
+  { "<leader>sf", "gf", desc = "🧷 Go to [F]ile under cursor" },
 })
 
 -- tabs
@@ -227,17 +232,16 @@ wk.add({
   { "<leader>tp", ":tabprev<CR>", desc = "⬅️ [P]rev Tab" },
 })
 
-
 -- --------------------------------------
 -- EXTRA
 -- --------------------------------------
 wk.add({
   { "<leader>x", group = "🎉 [X]tra" },
-  { "<leader>xt", "<cmd>TodoTelescope<cr>", desc = "📝 [T]odo"},
-  { "<leader>xf", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "🔧 [F]ixme"},
-  { "<leader>xn", ":NoiceLast<CR>", desc = "📢 [N]oice Last Message"},
-  { "<leader>xh", ":NoiceTelescope<CR>", desc = "📜 Noice [H]istory"},
-  { "<leader>xl", ":Lazy<CR>", desc = "🛋️ [L]azy"},
+  { "<leader>xt", "<cmd>TodoTelescope<cr>", desc = "📝 [T]odo" },
+  { "<leader>xf", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "🔧 [F]ixme" },
+  { "<leader>xn", ":NoiceLast<CR>", desc = "📢 [N]oice Last Message" },
+  { "<leader>xh", ":NoiceTelescope<CR>", desc = "📜 Noice [H]istory" },
+  { "<leader>xl", ":Lazy<CR>", desc = "🛋️ [L]azy" },
   { "<leader>xm", ":Mason<CR>", desc = "🧱 [M]ason" },
-  { "<leader>xu", ":Telescope luasnip<CR>", desc = "✂️ l[U]asnip"},
+  { "<leader>xu", ":Telescope luasnip<CR>", desc = "✂️ l[U]asnip" },
 })
