@@ -27,6 +27,5 @@ return {
     ls.filetype_extend("lua", { "luadoc" })
     ls.filetype_extend("python", { "pydoc" })
     ls.filetype_extend("rust", { "rustdoc" })
-
   end,
 }
