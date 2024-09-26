@@ -10,8 +10,6 @@ return {
         ["<M-h>"] = "actions.select_split",
         ["h"] = "actions.parent",
         ["l"] = "actions.select",
-        ["o"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
-        ["O"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
       },
       view_options = {
         show_hidden = true,

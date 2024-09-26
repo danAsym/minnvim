@@ -8,6 +8,7 @@ opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
+opt.breakindent = true
 opt.smartindent = true
 opt.wrap = false
 
@@ -32,6 +33,10 @@ opt.cursorline = true
 opt.guicursor = "i:ver25-iCursor"
 opt.completeopt = "menuone,noinsert,noselect"
 opt.fillchars = { eob = " " }
+opt.showmode = false
+opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+opt.signcolumn = 'yes'
+opt.inccommand = 'split'
 
 
 -- ======================================
@@ -44,18 +49,24 @@ opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 opt.isfname:append("@-@")
-opt.updatetime = 50
+opt.updatetime = 250
+opt.timeoutlen = 300
 opt.backspace = "indent,eol,start"
 opt.splitright = true
 opt.splitbelow = true
 opt.iskeyword:append("-")
-opt.clipboard:append("unnamedplus")
 opt.modifiable = true
 opt.mouse = "a" -- enable mouse support
-vim.opt.timeoutlen = 300
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+opt.list = true
 
+
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.schedule(function()
+  opt.clipboard = 'unnamedplus'
+end)
 
 -- ------------------------------------------------------------------
 -- highlight yanked text for 200ms using the "Visual" highlight group
@@ -69,3 +80,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = "#ffffff", bg = "NONE" })
+
+
+-- ------------------------------------------------------------------
+-- [[ Basic Keymaps ]]
+-- ------------------------------------------------------------------
+--  See `:help vim.keymap.set()`
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })

@@ -76,39 +76,18 @@ return {
     },
   },
 
-  -- mini pairs
+  -- auto pairs
   {
-    "echasnovski/mini.pairs",
-    event = "InsertEnter",
-    opts = {},
-  },
-
-  -- mini surround
-  {
-    "echasnovski/mini.surround",
-    event = "InsertEnter",
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    -- Optional dependency
+    dependencies = { 'hrsh7th/nvim-cmp' },
     config = function()
-      require("mini.surround").setup({
-        mappings = {
-          add = "gsa",            -- Add surrounding in Normal and Visual modes
-          delete = "gsd",         -- Delete surrounding
-          find = "gsf",           -- Find surrounding (to the right)
-          find_left = "gsF",      -- Find surrounding (to the left)
-          highlight = "gsh",      -- Highlight surrounding
-          replace = "gsr",        -- Replace surrounding
-          update_n_lines = "gsn", -- Update `n_lines`
-        },
-      })
+      require('nvim-autopairs').setup {}
+      -- If you want to automatically add `(` after selecting a function or method
+      local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
+      local cmp = require 'cmp'
+      cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
     end,
   },
-
-  -- mini buf remove
-  {
-    "echasnovski/mini.bufremove",
-    event = "VeryLazy",
-    config = function()
-      require("mini.bufremove").setup()
-    end,
-  },
-
 }

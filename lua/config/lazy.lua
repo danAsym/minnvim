@@ -15,12 +15,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- set
-require("config.set")
 
--- leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+-- set and global
+require("config.set")
+require("config.global")
 
 
 require("lazy").setup({

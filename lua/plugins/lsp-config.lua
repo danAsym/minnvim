@@ -1,8 +1,22 @@
 return {
+  {
+    "folke/lazydev.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        -- See the configuration section for more details
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "luvit-meta/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+  { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
   -- lsp config
   {
     "neovim/nvim-lspconfig",
-    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "LspInfo", "LspInstall", "LspUninstall" },
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for neovim
       "williamboman/mason.nvim",

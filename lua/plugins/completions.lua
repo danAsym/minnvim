@@ -37,9 +37,7 @@ return {
         completion = { completeopt = "menu,menuone,noinsert" },
 
         -- ghost text
-        experimental = {
-        	ghost_text = true,
-        },
+        experimental = { ghost_text = true },
 
         -- window
         window = {
@@ -80,6 +78,7 @@ return {
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "path" },
+          { name = "lazydev", group_index = 0 }
         }, {
           { name = "buffer" },
         }),
