@@ -92,6 +92,7 @@ wk.add({
 wk.add({
   { "ga", function() harpoon:list():add() end, desc = "🎣 Harpoon Mark [A]dd" },
   { "gh", function() toggle_telescope(harpoon:list()) end, desc = "🎣 [H]arpoon" },
+  { "gH", function()  harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "🎣 [H]arpoon List" },
   { "gq", "<cmd>Noice dismiss<CR>", desc = "🚪 [Q]uit Noice" },
 })
 

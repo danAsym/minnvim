@@ -261,7 +261,8 @@ return {
         end,
         javascript = { "prettier" },
         go = { "goimports", "gofmt" },
-        json = { "prettier" }
+        json = { "prettier" },
+        markdown = { "prettier" }
       },
     },
   },
