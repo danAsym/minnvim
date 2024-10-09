@@ -12,9 +12,9 @@ local options = {
 
   ui = {
     cmp = {
-      icons_left = false, -- only for non-atom styles!
+      icons_left = true, -- only for non-atom styles!
       lspkind_text = true,
-      style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
+      style = "flat_dark", -- default/flat_light/flat_dark/atom/atom_colored
       format_colors = {
         tailwind = true, -- will work for css lsp too
         icon = "󱓻",
