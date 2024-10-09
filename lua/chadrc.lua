@@ -1,13 +1,13 @@
 local options = {
 
   base46 = {
-    theme = "tundra", -- default theme
+    theme = "mountain", -- default theme
     hl_add = {},
     hl_override = {},
     integrations = {},
     changed_themes = {},
     transparency = false,
-    theme_toggle = { "onedark", "one_light" },
+    theme_toggle = { "mountain", "flexoki_light" },
   },
 
   ui = {
@@ -45,26 +45,23 @@ local options = {
   nvdash = {
     load_on_startup = true,
     header = {
-      "                            ",
-      "     ▄▄         ▄ ▄▄▄▄▄▄▄   ",
-      "   ▄▀███▄     ▄██ █████▀    ",
-      "   ██▄▀███▄   ███           ",
-      "   ███  ▀███▄ ███           ",
-      "   ███    ▀██ ███           ",
-      "   ███      ▀ ███           ",
-      "   ▀██ █████▄▀█▀▄██████▄    ",
-      "     ▀ ▀▀▀▀▀▀▀ ▀▀▀▀▀▀▀▀▀▀   ",
-      "                            ",
-      "     Powered By  eovim    ",
-      "                            ",
+      "                                                      ",
+      "                                                      ",
+      [[ ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ]],
+      [[ ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ]],
+      [[ ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ]],
+      [[ ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ]],
+      [[ ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ]],
+      [[ ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
+      "                                                      ",
+      "                                                      ",
     },
 
     buttons = {
       { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
-      { txt = "  Recent Files", keys = "Spc f o", cmd = "Telescope oldfiles" },
-      { txt = "󰈭  Find Word", keys = "Spc f w", cmd = "Telescope live_grep" },
+      { txt = "󰈭  Find Word", keys = "Spc f l", cmd = "Telescope live_grep" },
       { txt = "󱥚  Themes", keys = "Spc t h", cmd = ":lua require('nvchad.themes').open()" },
-      { txt = "  Mappings", keys = "Spc c h", cmd = "NvCheatsheet" },
+      { txt = "  Mappings", keys = "Spc x c", cmd = "NvCheatsheet" },
 
       { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
 

@@ -245,4 +245,5 @@ wk.add({
   { "<leader>xl", ":Lazy<CR>", desc = "🛋️ [L]azy" },
   { "<leader>xm", ":Mason<CR>", desc = "🧱 [M]ason" },
   { "<leader>xu", ":Telescope luasnip<CR>", desc = "✂️ l[U]asnip" },
+  { "<leader>xc", ":NvCheatsheet<CR>", desc = "🗂️Nv[C]heatsheet" },
 })
