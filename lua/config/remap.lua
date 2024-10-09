@@ -20,8 +20,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<Tab>", ":tabnext<CR>", opts)
 vim.keymap.set("n", "<S-Tab>", ":tabprev<CR>", opts)
-vim.keymap.set("n", "[b", function() nvb.prev() end, opts)
-vim.keymap.set("n", "]b", function() nvb.next() end, opts)
+vim.keymap.set("n", "gb", function() nvb.prev() end, opts)
+vim.keymap.set("n", "gt", function() nvb.next() end, opts)
 vim.keymap.set("v", "<Tab>", ">gv", opts)
 vim.keymap.set("v", "<S-Tab>", "<gv", opts)
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)

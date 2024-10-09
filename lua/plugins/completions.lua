@@ -21,7 +21,7 @@ return {
     },
 
     config = function()
-      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
+      -- vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
       local luasnip = require("luasnip")
       local options = {
@@ -33,16 +33,16 @@ return {
           end,
         },
 
-        completion = { completeopt = "menu,menuone,noinsert" },
+        -- completion = { completeopt = "menu,menuone,noinsert" },
 
         -- ghost text
-        experimental = { ghost_text = true },
+        -- experimental = { ghost_text = true },
 
         -- window
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
+        -- window = {
+        --   completion = cmp.config.window.bordered(),
+        --   documentation = cmp.config.window.bordered(),
+        -- },
 
         mapping = cmp.mapping.preset.insert({
 
@@ -76,15 +76,11 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
-          { name = "path" },
-          { name = "lazydev", group_index = 0 }
-        }, {
           { name = "buffer" },
+          { name = "lazydev", group_index = 0 },
+          { name = "path" },
         }),
       }
-
-      options = vim.tbl_deep_extend("force", options, require "nvchad.cmp")
-      cmp.setup(options)
 
       -- `/` cmdline setup.
       cmp.setup.cmdline("/", {
@@ -93,6 +89,9 @@ return {
           { name = "buffer" },
         },
       })
+
+      options = vim.tbl_deep_extend("force", options, require "nvchad.cmp")
+      cmp.setup(options)
     end,
   },
 }

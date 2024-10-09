@@ -100,12 +100,11 @@ return {
 
   {
     "nvim-lua/plenary.nvim",
-    lazy = true,
+    lazy = false,
   },
 
   {
     "nvchad/ui",
-    lazy = false,
     config = function()
       require "nvchad"
     end
@@ -113,7 +112,7 @@ return {
 
   {
     "nvchad/base46",
-    lazy = true,
+    event = "InsertEnter", -- Lazy load on entering insert mode
     build = function()
       require("base46").load_all_highlights()
     end,

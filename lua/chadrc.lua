@@ -1,20 +1,20 @@
 local options = {
 
   base46 = {
-    theme = "mountain", -- default theme
+    theme = "tundra", -- default theme
     hl_add = {},
     hl_override = {},
     integrations = {},
     changed_themes = {},
     transparency = false,
-    theme_toggle = { "mountain", "flexoki_light" },
+    theme_toggle = { "tundra", "flexoki_light" },
   },
 
   ui = {
     cmp = {
       icons_left = false, -- only for non-atom styles!
       lspkind_text = true,
-      style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+      style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
       format_colors = {
         tailwind = true, -- will work for css lsp too
         icon = "󱓻",
@@ -25,7 +25,7 @@ local options = {
 
     statusline = {
       enabled = true,
-      theme = "minimal", -- default/vscode/vscode_colored/minimal
+      theme = "vscode_colored", -- default/vscode/vscode_colored/minimal
       -- default/round/block/arrow separators work only for default statusline theme
       -- round and block will work for minimal theme only
       separator_style = "default",
