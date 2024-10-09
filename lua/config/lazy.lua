@@ -1,3 +1,6 @@
+-- base46_cache
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
+
 -- bootstrap lazyvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -50,6 +53,10 @@ require("lazy").setup({
         -- "zipPlugin",
       },
     },
+  },
+  install = {
+    -- try to load one of these colorschemes when starting an installation during startup
+    colorscheme = { "nvchad" },
   },
   ui = {
     -- a number <1 is a percentage., >1 is a fixed size
@@ -118,5 +125,7 @@ require("lazy").setup({
 -- import others
 require("config.remap")
 
--- colorscheme
-vim.cmd("colorscheme rose-pine")
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
+dofile(vim.g.base46_cache .. "syntax")
+dofile(vim.g.base46_cache .. "treesitter")

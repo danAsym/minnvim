@@ -24,8 +24,7 @@ return {
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
       local luasnip = require("luasnip")
-
-      cmp.setup({
+      local options = {
 
         -- Snippet engine configuration
         snippet = {
@@ -82,7 +81,10 @@ return {
         }, {
           { name = "buffer" },
         }),
-      })
+      }
+
+      options = vim.tbl_deep_extend("force", options, require "nvchad.cmp")
+      cmp.setup(options)
 
       -- `/` cmdline setup.
       cmp.setup.cmdline("/", {

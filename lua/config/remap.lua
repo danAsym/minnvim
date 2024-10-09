@@ -2,6 +2,7 @@ local wk = require("which-key")
 local tels = require("telescope.builtin")
 local harpoon = require("harpoon")
 local ls = require("luasnip")
+local nvb = require("nvchad.tabufline")
 
 
 -- ======================================
@@ -19,8 +20,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<Tab>", ":tabnext<CR>", opts)
 vim.keymap.set("n", "<S-Tab>", ":tabprev<CR>", opts)
-vim.keymap.set("n", "[b", "<cmd>BufferLineCyclePrev<cr>", opts)
-vim.keymap.set("n", "]b", "<cmd>BufferLineCycleNext<cr>", opts)
+vim.keymap.set("n", "[b", function() nvb.prev() end, opts)
+vim.keymap.set("n", "]b", function() nvb.next() end, opts)
 vim.keymap.set("v", "<Tab>", ">gv", opts)
 vim.keymap.set("v", "<S-Tab>", "<gv", opts)
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
@@ -103,7 +104,6 @@ wk.add({
 wk.add({
   { "<leader>b", group = "📑 [B]uffers" },
   { "<leader>bb", tels.buffers, desc = "🔍 Find [B]uffers" },
-  { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "📌 Toggle [P]in" },
   {
     "<leader>bc",
     function()
