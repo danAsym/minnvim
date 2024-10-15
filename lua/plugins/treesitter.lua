@@ -12,6 +12,10 @@ local config = function()
       "BufNewFile",
     },
     ensure_installed = {
+      "vimdoc",
+      "luadoc",
+      "vim",
+      "query",
       "go",
       "gomod",
       "gowork",
