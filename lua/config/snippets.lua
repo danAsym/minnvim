@@ -17,3 +17,4 @@ ls.add_snippets("javascriptreact", {
   -- available in any filetype
   ls.parser.parse_snippet("dv", "<div className=$1>\n  $2\n</div>$0"),
 })
+

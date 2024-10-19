@@ -105,8 +105,13 @@ return {
 
   {
     "nvchad/ui",
+    lazy = false,
     config = function()
       require "nvchad"
+      local nvb = require("nvchad.tabufline")
+      local opts = { noremap = true, silent = true }
+      vim.keymap.set("n", "gb", function() nvb.prev() end, opts)
+      vim.keymap.set("n", "gt", function() nvb.next() end, opts)
     end
   },
 
