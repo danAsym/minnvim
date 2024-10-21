@@ -20,7 +20,6 @@ local config = function()
       "gomod",
       "gowork",
       "gosum",
-      "rust",
       "markdown",
       "json",
       "javascript",

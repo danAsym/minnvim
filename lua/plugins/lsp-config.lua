@@ -42,7 +42,7 @@ return {
           map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
           map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
           map("gD", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-          map("<leader>br", vim.lsp.buf.rename, "[R]ename")
+          map("<leader>gR", vim.lsp.buf.rename, "[R]ename")
           map("<leader>la", vim.lsp.buf.code_action, "Code [A]ction")
           map("<leader>lf", vim.lsp.buf.format, "Code [F]ormat")
           map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -115,22 +115,30 @@ return {
           -- capabilities = {...},
         },
 
-        rust_analyzer = {
-          -- cmd = {...},
-          -- filetyles = {...},
-          -- capabilities = {...},
-          autostart = true,
-          on_attach = function(client, bufnr)
-            vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-          end,
-          settings = {
-            ["rust-analyzer"] = {
-              cargo = {
-                allFeatures = true,
-              }
-            },
-          },
-        },
+        -- rust_analyzer = {
+        --   -- cmd = {...},
+        --   -- filetyles = {...},
+        --   -- capabilities = {...},
+        --   autostart = true,
+        --   -- on_attach = function(client, bufnr)
+        --   --   vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+        --   -- end,
+        --   -- capabilities = capabilities,
+        --   root_dir = function()
+        --     return vim.fn.getcwd()
+        --   end,
+        --   cmd = { "rustup", "run", "stable", "rust-analyzer" },
+        --   settings = {
+        --     rust_analyzer = {
+        --       cargo = {
+        --         allFeatures = true,
+        --       },
+        --       checkOnSave = {
+        --         command = "cargo clippy",
+        --       },
+        --     },
+        --   },
+        -- },
 
         -- gopls
         gopls = {
@@ -199,8 +207,13 @@ return {
       require("mason-lspconfig").setup({
         handlers = {
           function(server_name)
+            if server_name == "rust_analyzer" then
+              return
+            end
+
             local server = servers[server_name] or {}
             local name = server["alt_name"] or server_name
+
             require("lspconfig")[name].setup({
               cmd = server.cmd,
               settings = server.settings,

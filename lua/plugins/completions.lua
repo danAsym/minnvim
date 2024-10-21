@@ -33,16 +33,16 @@ return {
           end,
         },
 
-        -- completion = { completeopt = "menu,menuone,noinsert" },
+        completion = { completeopt = "menu,menuone,noinsert" },
 
         -- ghost text
-        -- experimental = { ghost_text = true },
+        experimental = { ghost_text = true },
 
         -- window
-        -- window = {
-        --   completion = cmp.config.window.bordered(),
-        --   documentation = cmp.config.window.bordered(),
-        -- },
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
 
         mapping = cmp.mapping.preset.insert({
 
@@ -90,7 +90,7 @@ return {
         },
       })
 
-      options = vim.tbl_deep_extend("force", options, require "nvchad.cmp")
+      -- options = vim.tbl_deep_extend("force", options, require "nvchad.cmp")
       cmp.setup(options)
     end,
   },
