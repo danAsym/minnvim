@@ -1,6 +1,5 @@
 local opt = vim.opt
 
-
 -- ======================================
 -- TAB/IDENTATION
 -- ======================================
@@ -12,7 +11,6 @@ opt.breakindent = true
 opt.smartindent = true
 opt.wrap = false
 
-
 -- ======================================
 -- SEARCH
 -- ======================================
@@ -20,7 +18,6 @@ opt.hlsearch = false
 opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
-
 
 -- ======================================
 -- APPEARANCE
@@ -34,10 +31,9 @@ opt.guicursor = "i:ver25-iCursor"
 opt.completeopt = "menuone,noinsert,noselect"
 opt.fillchars = { eob = " " }
 opt.showmode = false
-opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-opt.signcolumn = 'yes'
-opt.inccommand = 'split'
-
+opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
+opt.signcolumn = "yes"
+opt.inccommand = "split"
 
 -- ======================================
 -- BEHAVIOUR
@@ -59,13 +55,12 @@ opt.modifiable = true
 opt.mouse = "a" -- enable mouse support
 opt.list = true
 
-
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  opt.clipboard = 'unnamedplus'
+	opt.clipboard = "unnamedplus"
 end)
 
 -- ------------------------------------------------------------------
@@ -81,7 +76,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = "#ffffff", bg = "NONE" })
 
-
 -- ------------------------------------------------------------------
 -- [[ Basic Keymaps ]]
 -- ------------------------------------------------------------------
@@ -89,9 +83,8 @@ vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = "#ffffff", bg = "NONE" 
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- netrw
-vim.keymap.set('n', 'g;', '<cmd>Ex<CR>')
+vim.keymap.set("n", "g;", "<cmd>Ex<CR>")

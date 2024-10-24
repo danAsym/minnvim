@@ -276,7 +276,7 @@ return {
 
 			wk.add({
 				{ "<leader>s", group = "⚡ [S]earch and Replace" },
-				{ "<leader>ss", search_word_in_selected_path, desc = "Search folder to quckfix" },
+				{ "<leader>ss", search_word_in_selected_path, desc = "Cword to quckfix" },
 				-- search and replace
 				{ "<leader>sr", ":%s/\\<<C-r><C-w>\\>//g<Left><Left>", desc = "🔄 [R]eplace All" },
 				{ "<leader>sc", ":%s/\\<<C-r><C-w>\\>//gc<Left><Left><Left>", desc = "✅ [C]onfirm Replace All" },
