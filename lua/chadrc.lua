@@ -16,7 +16,7 @@ local options = {
 			lspkind_text = true,
 			style = "flat_dark", -- default/flat_light/flat_dark/atom/atom_colored
 			format_colors = {
-				tailwind = true, -- will work for css lsp too
+				tailwind = false, -- will work for css lsp too
 				icon = "󱓻",
 			},
 		},
